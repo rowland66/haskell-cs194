@@ -18,7 +18,6 @@ loop = do
         Nothing -> return ()
         Just ":q" -> return () -- special handling for quit
         Just input -> do
-            --let variableMap' = execState (processCmd (tail input)) variableMap
             if (head input == ':') then
               (processCmd (tail input)) >> loop
             else
